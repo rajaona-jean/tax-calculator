@@ -16,7 +16,7 @@ public class CompanyController {
     public CompanyController() {
     }
 
-    @PostMapping("/dueTaxe")
+    @PostMapping("/dueTax")
     public CompanyWithComputedTax getDueTaxe(@RequestBody CompanyForm companyForm) {
         if(!companyForm.isFormValid()){
             throw new NotValidCompanyForm();
