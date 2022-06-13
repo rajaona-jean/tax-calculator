@@ -1,5 +1,6 @@
 package com.test.taxcalculator.routes.adapter;
 
+import com.test.taxcalculator.calculators.AutoEntrepriseTax;
 import com.test.taxcalculator.calculators.SasTax;
 import com.test.taxcalculator.calculators.port.CompanyTax;
 import com.test.taxcalculator.routes.model.CompanyForm;
@@ -17,6 +18,7 @@ public class CompanyWithComputedTaxBuilder {
     public CompanyWithComputedTaxBuilder(CompanyForm companyForm) {
         this.companyType = companyForm.companyType;
         this.companyTaxMap.put(CompanyType.SAS, new SasTax(companyForm.name, companyForm.siretNumber, companyForm.revenue, companyForm.headOfficeAddress));
+        this.companyTaxMap.put(CompanyType.AUTO_ENTREPRISE, new AutoEntrepriseTax(companyForm.name, companyForm.siretNumber, companyForm.revenue));
     }
 
     public CompanyWithComputedTax build() {
