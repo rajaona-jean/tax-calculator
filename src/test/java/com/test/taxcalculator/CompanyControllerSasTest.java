@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class CompanyControllerSasTest {
 
     @Test
-    void shouldComputeDueTaxeForSas() {
+    void shouldComputeDueTaxe() {
         // Expected
         double SasTaxRate = 0.33D;
         CompanyWithComputedTax expectedCompanyWithComputedTax = new CompanyWithComputedTax("company test", 12334568912345L, 100000D, 100000D * SasTaxRate);
@@ -29,7 +29,7 @@ class CompanyControllerSasTest {
     }
 
     @Test
-    void shouldThrowErrorIfNullRevenueSetForSas() {
+    void shouldThrowErrorIfNullRevenueSet() {
         // Given
         CompanyForm companyForm = new CompanyFormFakeBuilder().setRevenue(null).setCompanyType(CompanyType.SAS).build();
 
@@ -38,7 +38,7 @@ class CompanyControllerSasTest {
     }
 
     @Test
-    void shouldThrowErrorIfNullNameSetForSas() {
+    void shouldThrowErrorIfNullNameSet() {
         // Given
         CompanyForm companyForm = new CompanyFormFakeBuilder().setName(null).setCompanyType(CompanyType.SAS).build();
 
@@ -47,7 +47,7 @@ class CompanyControllerSasTest {
     }
 
     @Test
-    void shouldThrowErrorIfNullSiretSetForSas() {
+    void shouldThrowErrorIfNullSiretSet() {
         // Given
         CompanyForm companyForm = new CompanyFormFakeBuilder().setSiretNumber(null).setCompanyType(CompanyType.SAS).build();
 
@@ -56,7 +56,7 @@ class CompanyControllerSasTest {
     }
 
     @Test
-    void shouldThrowErrorIfNoNameSetForSas() {
+    void shouldThrowErrorIfNoNameSet() {
         // Given
         CompanyForm companyForm = new CompanyFormFakeBuilder().setName("").setCompanyType(CompanyType.SAS).build();
 
@@ -65,7 +65,7 @@ class CompanyControllerSasTest {
     }
 
     @Test
-    void shouldThrowErrorIfRevenueIsLessThan0ForSas() {
+    void shouldThrowErrorIfRevenueIsLessThan0() {
         // Given
         CompanyForm companyForm = new CompanyFormFakeBuilder().setRevenue(-3D).setCompanyType(CompanyType.SAS).build();
 
@@ -74,7 +74,7 @@ class CompanyControllerSasTest {
     }
 
     @Test
-    void shouldThrowErrorIfSiretNumberLengthIsLessThan14ForSas() {
+    void shouldThrowErrorIfSiretNumberLengthIsLessThan14() {
         // Given
         CompanyForm companyForm = new CompanyFormFakeBuilder().setSiretNumber(1223121L).setCompanyType(CompanyType.SAS).build();
 
@@ -83,7 +83,7 @@ class CompanyControllerSasTest {
     }
 
     @Test
-    void shouldThrowErrorIfSiretNumberLengthIsHigherThan14ForSas() {
+    void shouldThrowErrorIfSiretNumberLengthIsHigherThan14() {
         // Given
         CompanyForm companyForm = new CompanyFormFakeBuilder().setSiretNumber(122312112312311L).setCompanyType(CompanyType.SAS).build();
 
